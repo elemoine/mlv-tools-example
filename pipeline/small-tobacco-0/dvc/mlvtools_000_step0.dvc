@@ -1,0 +1,12 @@
+md5: c6f976669df0a015c72931fb10ee9704
+cmd: scripts/mlvtools_000_step0.py --ifile data/extracts/extract.csv --ofile data/intermediate_results/intermediate.pdf
+wdir: ..
+deps:
+- md5: 6e7bb525f12fc29a2b9f4c48a57bbc71
+  path: data/extracts/extract.csv
+outs:
+- md5: 796ce9e364a2992a66fc4982fc9ef974
+  path: data/intermediate_results/intermediate.pdf
+  cache: true
+  metric: false
+  persist: false

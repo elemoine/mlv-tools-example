@@ -1,0 +1,8 @@
+{
+  "path": {
+    "python_script_root_dir": "scripts",
+    "dvc_cmd_root_dir": "dvc",
+    "dvc_metadata_root_dir": "dvc"
+  },
+  "docstring_conf": "conf/docstring_conf.yml"
+}

@@ -1,0 +1,13 @@
+md5: b9882b15b81b7cacd7add0d6f5007d59
+cmd: scripts/mlvtools_001_step1.py --ifile data/intermediate_results/intermediate.pdf
+  --ofile data/models/aggregated_model.pkl
+wdir: ..
+deps:
+- md5: 796ce9e364a2992a66fc4982fc9ef974
+  path: data/intermediate_results/intermediate.pdf
+outs:
+- md5: 24bdb850d3cb9226c1487c8dfe7d6bbd
+  path: data/models/aggregated_model.pkl
+  cache: true
+  metric: false
+  persist: false

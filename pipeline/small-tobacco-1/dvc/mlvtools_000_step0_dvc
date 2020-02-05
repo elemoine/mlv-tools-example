@@ -1,0 +1,40 @@
+#!/bin/bash -eu
+usage() { echo "$0 usage:" && grep " .*)\ #" $0; exit 0; }
+NO_CACHE_OPT=''
+options=$(getopt -l "help,no-cache" -o "h" -a -- "$@")
+eval set -- "$options"
+
+while true; do
+    case $1 in
+        -h|--help) # Display help
+            usage
+            ;;
+        --no-cache) # Disable cache
+            NO_CACHE_OPT=' --ignore-build-cache'
+        ;;
+        --)
+            shift
+            break;;
+    esac
+    shift
+done
+
+
+
+pushd "/home/elemoine/src/mlv-tools-example/pipeline/small-tobacco-1"
+set -x
+MLV_PY_CMD_PATH="scripts/mlvtools_000_step0.py"
+MLV_PY_CMD_NAME="mlvtools_000_step0.py"
+IFILE="data/extracts/extract.csv"
+OFILE="data/intermediate_results/intermediate.pdf"
+
+# META FILENAME, MODIFY IF DUPLICATE
+MLV_DVC_META_FILENAME="dvc/mlvtools_000_step0.dvc"
+
+dvc run${NO_CACHE_OPT} --overwrite-dvcfile -f $MLV_DVC_META_FILENAME \
+-d $IFILE \
+-o $OFILE \
+scripts/mlvtools_000_step0.py --ifile $IFILE --ofile $OFILE
+
+
+popd

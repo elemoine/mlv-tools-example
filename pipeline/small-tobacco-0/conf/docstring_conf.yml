@@ -1,0 +1,4 @@
+---
+extract: data/extracts/extract.csv
+intermediate: data/intermediate_results/intermediate.pdf
+model: data/models/aggregated_model.pkl

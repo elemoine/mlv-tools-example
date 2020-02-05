@@ -1,0 +1,7 @@
+md5: e6b5603b2806d37ee3bb8f9816d18ee9
+outs:
+- md5: 6e7bb525f12fc29a2b9f4c48a57bbc71
+  path: extract.csv
+  cache: true
+  metric: false
+  persist: false
